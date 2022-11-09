@@ -1,0 +1,30 @@
+.click {
+    margin: 0 auto;
+    background-color: beige;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 20em;
+}
+
+.click p {
+    width: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.buttons {
+    margin: 50px auto 30px auto;
+}
+
+.tracks {
+    margin-top: 20px;
+}
+
+.menu {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
