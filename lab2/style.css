@@ -27,7 +27,7 @@ body {
 
 .slide {
     width: 20%;
-    transition: 2s;
+    transition: 1s;
 }
 
 .slide img {
@@ -48,29 +48,8 @@ body {
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
-    transition: 1s;
-}
-
-.manual-btn:not(:last-child) {
-    margin-right: 40px;
 }
 
 .manual-btn:hover {
     background: #a8c223;
-}
-
-#radio1:checked~.first {
-    margin-left: 0;
-}
-
-#radio2:checked~.first {
-    margin-left: -20%;
-}
-
-#radio3:checked~.first {
-    margin-left: -40%;
-}
-
-#radio4:checked~.first {
-    margin-left: -60%;
 }
