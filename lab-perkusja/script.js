@@ -1,6 +1,6 @@
 let playSounds,
     audio = [], audio1 = [], audio2 = [], audio3 = [],
-    startTime,
+    startTime,currentTime,
     fullTime, fullTime1, fullTime2, fullTime3,
     recordButton = document.querySelector("#record"),
     recordButton1 = document.querySelector('#record1'),
@@ -54,6 +54,7 @@ document.body.addEventListener('keypress', (e) => {
 });
 
 let isRecording = false;
+
 function startRecording(track, trackTime) {
     isRecording = true;
     console.log("recording")
@@ -96,13 +97,15 @@ function stopRecording() {
     console.log("stop recording")
 };
 
-function playTrack(track, time) {
-    console.log("playing track")
+function playTrack(track) {
+    let startTime = 0;
     for (let i = 0; i < track.length; i++) {
+      setTimeout(() => {
+        console.log(track[i]);
+        track[i].currentTime = 0;
         track[i].play();
-        setTimeout(() => {
-            track[i].play()
-        }, time);
+      }, startTime);
+      startTime += track[i].duration * 1000;
     }
 }
 
@@ -112,6 +115,10 @@ function clearTrack(track) {
 }
 
 playAll.addEventListener('click', function (e) {
+    playTrack(audio);
+    playTrack(audio1);
+    playTrack(audio2);
+    playTrack(audio3);
     console.log(audio.length)
 });
 
@@ -128,7 +135,7 @@ playButton1.addEventListener('click', playTrack.bind(null, audio1, fullTime1));
 playButton2.addEventListener('click', playTrack.bind(null, audio2, fullTime2));
 playButton3.addEventListener('click', playTrack.bind(null, audio3, fullTime3));
 
-recordButton.addEventListener('click', startRecording.bind(null, audio, fullTime), false);
+recordButton.addEventListener('click', startRecording.bind(null, audio, fullTime));
 recordButton1.addEventListener('click', startRecording.bind(null, audio1, fullTime1))
 recordButton2.addEventListener('click', startRecording.bind(null, audio2, fullTime2))
 recordButton3.addEventListener('click', startRecording.bind(null, audio3, fullTime3))
